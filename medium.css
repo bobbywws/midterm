@@ -1,0 +1,220 @@
+body {
+	background-color: black;
+}
+
+.header {
+	background-color: #1168a6;
+	height: 300px;
+}
+
+#home {
+	position: absolute;
+}
+
+/*For the home page */ /*****************************************/
+
+.headerTitle h1 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 50px;
+	color: white;
+}
+
+.headerTitle p {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 30px;
+	color: white;
+	margin: auto;
+}
+
+.userChoiceButton {
+	margin: auto;
+}
+
+.aboutUs h2 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 40px;
+}
+
+.aboutUs p {
+	font-size: 20px;
+}
+
+.businessInfo h2 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 40px;
+}
+
+.businessInfo p {
+	font-size: 20px;
+}
+
+.footer {
+	height: 50px;
+	background-color: #1168a6;
+	margin: auto;
+}
+
+.footerInfo {
+	font-family: 'Cedarville Cursive', cursive;
+	margin: auto;
+	font-size: 30px;
+	color: white;
+	line-height: 50px;
+	vertical-align: center;
+}
+
+/*For the business page */ /*******************************************/
+
+.headerTitleBusiness h1 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 45px;
+	color: white;
+}
+
+.headerTitleBusiness p {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 30px;
+	color: white;
+	margin: auto;
+}
+
+.businessInput {
+	margin: auto;
+}
+
+.businessInputBox {
+	border-radius: 5px;
+}
+
+.submitBusiness {
+	padding: 20px;
+	float: right;
+}
+
+.businessInfo h2 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 40px;
+}
+
+.businessInfo p {
+	font-size: 20px;
+}
+
+.exampleEvent h3 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 35px;
+}
+
+.readyToPost {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 40px;	
+}
+
+.letsGo {
+	margin-left: 45%;
+}
+
+
+.listItems {
+	font-size: 20px;
+}
+
+/*For the consumer page */ /*******************************************/
+
+.headerTitleConsumer h1 {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 50px;
+	color: white;
+}
+
+.headerTitleConsumer p {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 30px;
+	color: white;
+	margin: auto;
+}
+
+.consumerInput {
+	margin: auto; 
+}
+
+.submitConsumer {
+	padding: 20px;
+	float: right;
+}
+
+.eventMain {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 40px;
+	height: 100px;
+}
+
+.submitBusiness {
+	margin: auto;
+	float: right;
+}
+
+.addBusinessEvent {
+	color: black;
+	border-radius: 5px;
+	margin: auto;
+}
+
+.addBusiness {
+	margin: 0px;
+}
+
+.addYourEvent {
+	font-size: 20px;
+}
+
+/* Card Flip Trick ///////////////// */
+
+.front {
+	position: absolute;
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
+}
+
+.back {
+	transform: rotateY(180deg);
+	padding: 20px;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	font: 50px;
+}
+
+.front, .back {
+	transition: all 1s;
+	backface-visibility: hidden;
+	background: #CCC;
+	border-radius: 10px;
+}
+
+.portfolio-item:hover .back {
+	transform: rotateY(0deg);
+}
+.portfolio-item:hover .front {
+	transform: rotateY(180deg);
+}
+
+.portfolio-item {
+
+}
+
+.something {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#portfolio {
+	text-align: center;
+}
+
+.flipShit {
+	margin-left: 20%;
+	text-align: left;
+	font-size: 18px;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html ng-app="sportsViewer">
+
+	<head>
+
+		<title>Consumer Page</title>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" media="screen and (max-width: 640px)" type="text/css" href="small.css">
+
+		<link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 1198px)" type="text/css" href="medium.css">
+
+		<link rel="stylesheet" media="screen and (min-width: 1199px)" type="text/css" href="main.css">
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
+
+		<script type="text/javascript" src="main.js"></script>
+
+	</head>
+
+	<body ng-controller="viewTroller" >
+
+		<a href="main.html" type="button" class="btn btn-success" id="home"><h1>H</h1></a>
+
+		<div class="container-fluid header">
+			<div class="container headerTitleConsumer">
+				<h1>Sports Viewer For Fans </h1>
+					<br>
+					<p>Fill out the fields below and you'll be on your way to drinking, eating, and cheering before you can say "hike" !</p>
+			</div>	
+		</div>
+		<div class="container">	
+		<br>
+		<br>
+		<div class="row consumerInput">
+			<h3>Please Fill Out The Form, And See Your Results Below:</h3>
+			<br>
+			<form>
+				<div class="col-xs-12 col-lg-6">
+					<p>What type of sporting event are you looking for?</p>
+					<span ng-repeat="sport in sportsList">
+						<input type="checkbox" ng-click="updateFilter(sport)"><span> {{sport}}</span><br>
+					</span>
+					<br>
+				</div>
+				<div class="col-xs-12 col-lg-6">		
+					<p>Who type of environment are you interested in being in?</p>
+					<span ng-repeat="age in agesList">
+						<input type="checkbox" ng-click="updateFilterAge(age)"><span> {{age}}</span><br>
+					</span>		
+					<br>
+				</div>
+			</form>
+		</div>	
+		<br>
+		<hr align="center" color="white">
+		<br>
+		<h1 class="eventMain" align="center">Upcoming Events Near You</h1>
+		<p align="center">(Hover your mouse over any picture that you are interested in learning more about!)</p>
+		<br>	
+		<hr align="center" color="white">
+		<div class="row something">
+		<div id="portfolio" class="col-xs-12 col-md-6 col-lg-6">
+			<div ng-repeat="event in events | filter: sportsFilter | filter: agesFilter" ng-if="$even" class="portfolio-item">
+				<h3 class="eventMain">{{event.title}} at<br>
+						{{event.business}}</h3>
+				<br>		
+				<br>
+				<br>
+				<div class="front flipShit">
+					<img width="300" height="300" src="{{event.img}}">
+				</div>
+				<div class="back flipShit">
+					<ul>
+						<li>{{event.address}}</li>
+						<li>{{event.city}}</li>
+						<li>{{event.state}}</li>
+						<li>{{event.zip}}</li>
+						<li>{{event.sport}}</li>
+						<li>{{event.reoccuring}}</li>
+						<li>{{event.age}}</li>
+						<li>{{event.date}}</li>
+						<li>{{event.notes}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="portfolio" class="col-xs-12 col-md-6 col-lg-6">
+			<div ng-repeat="event in events | filter: sportsFilter | filter: agesFilter" ng-if="$odd" class="portfolio-item">
+				<h3 class="eventMain">{{event.title}} at<br>
+						{{event.business}}</h3>
+				<br>		
+				<br>
+				<br>
+				<div class="front flipShit">
+					<img width="300" height="300" src="{{event.img}}">
+				</div>
+				<div class="back flipShit">
+					<ul>
+						<li>{{event.address}}</li>
+						<li>{{event.city}}</li>
+						<li>{{event.state}}</li>
+						<li>{{event.zip}}</li>
+						<li>{{event.sport}}</li>
+						<li>{{event.reoccuring}}</li>
+						<li>{{event.age}}</li>
+						<li>{{event.date}}</li>
+						<li>{{event.notes}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		</div>
+			<br>
+			<hr align="center" color="white">
+			<br>
+			<h3>Add your event!<h3>
+			<div class="row">	
+				<div class="col-xs-12 col-lg-4">
+					<input ng-model="newEvent.title" placeholder="Event Title" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.img" placeholder="Picture (URL)" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.business" placeholder="Business Name" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.address" placeholder="Address" class="addBusinessEvent">
+					<br>
+					<br>
+				</div>	
+				<div class="col-xs-12 col-lg-4">
+					<input ng-model="newEvent.city" placeholder="City" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.state" placeholder="State" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.zip" placeholder="Zip Code" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.reoccuring" placeholder="Reoccuring?" class="addBusinessEvent">
+					<br>
+					<br>
+				</div>
+				<div class="col-xs-12 col-lg-4">
+					<input ng-model="newEvent.age" placeholder="Ages Allowed?" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.date" placeholder="Date: Sunday, 1/1/16" class="addBusinessEvent">
+					<br>
+					<br>
+					<input ng-model="newEvent.notes" placeholder="Details (Drink Specials)" class="addBusinessEvent">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<button ng-click="addEvent()" class="btn btn-success submitBusiness">Add Your Event!</button>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+	</div>
+		<div class="container-fluid footer">
+			<div class="row container footerInfo">
+				<div align="center" class="col-xs-12 col-lg-6">
+					<p>Copyright: Sports Viewer 2016</p>
+				</div>
+				<div align="center" class="col-xs-12 col-lg-6">
+					<p>Contact Us: sportsviewer@madeUp.com</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
